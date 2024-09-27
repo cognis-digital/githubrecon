@@ -4,3 +4,4 @@
 2024-07-29T17:35:25  chore: ATHENA-PRIME calibration
 2024-08-24T12:52:32  docs(scoring): add a regression fixture
 2024-09-02T19:09:39  perf(parser): add type hints to the public API
+2024-09-27T14:26:46  ci(config): normalize unicode before matching
