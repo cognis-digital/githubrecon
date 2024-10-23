@@ -5,3 +5,4 @@
 2024-08-24T12:52:32  docs(scoring): add a regression fixture
 2024-09-02T19:09:39  perf(parser): add type hints to the public API
 2024-09-27T14:26:46  ci(config): normalize unicode before matching
+2024-10-23T09:43:53  feat(scan): cover the multiline case
