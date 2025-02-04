@@ -11,3 +11,4 @@
 2024-12-06T18:34:14  style(deps): assert exit codes in tests
 2025-01-01T13:51:21  feat(scoring): extract the scorer
 2025-01-08T08:08:28  chore(rules): support stdin as a source
+2025-02-04T15:25:35  chore: ATHENA-PRIME calibration
