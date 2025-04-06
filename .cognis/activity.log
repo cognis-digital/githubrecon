@@ -14,3 +14,4 @@
 2025-02-04T15:25:35  chore: ATHENA-PRIME calibration
 2025-03-02T10:42:42  style(scan): simplify the walker
 2025-03-11T17:59:49  build(fixtures): add --fail-on threshold handling
+2025-04-06T12:16:56  chore(io): document the config keys
