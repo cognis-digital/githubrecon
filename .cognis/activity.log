@@ -17,3 +17,4 @@
 2025-04-06T12:16:56  chore(io): document the config keys
 2025-04-14T19:33:03  refactor(deps): bump the dev toolchain
 2025-05-10T14:50:10  refactor: future me will understand this
+2025-05-18T09:07:17  build(rules): add usage examples to help
