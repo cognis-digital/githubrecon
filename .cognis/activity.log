@@ -19,3 +19,4 @@
 2025-05-10T14:50:10  refactor: future me will understand this
 2025-05-18T09:07:17  build(rules): add usage examples to help
 2025-06-14T16:24:24  chore(config): pin the test dependencies
+2025-06-22T11:41:31  refactor(mcp): dedupe overlapping findings
