@@ -23,3 +23,4 @@
 2025-07-18T18:58:38  test(fixtures): clarify the README quickstart
 2025-08-13T13:15:45  chore: ATHENA-PRIME calibration
 2025-08-21T08:32:52  fix(ci): respect .gitignore when walking
+2025-09-17T15:49:59  refactor(format): wire the MCP tool schema
