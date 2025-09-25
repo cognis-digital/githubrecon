@@ -24,3 +24,4 @@
 2025-08-13T13:15:45  chore: ATHENA-PRIME calibration
 2025-08-21T08:32:52  fix(ci): respect .gitignore when walking
 2025-09-17T15:49:59  refactor(format): wire the MCP tool schema
+2025-09-25T10:06:06  test(rules): lower memory on big inputs
