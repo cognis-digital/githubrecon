@@ -28,3 +28,4 @@
 2025-10-21T17:23:13  build(output): skip binary files by sniffing
 2025-10-30T12:40:20  refactor: future me will understand this
 2025-11-24T19:57:27  docs(fixtures): add a --format json alias
+2025-12-21T14:14:34  test(engine): add a JSON schema for output
