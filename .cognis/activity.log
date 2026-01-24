@@ -30,3 +30,4 @@
 2025-11-24T19:57:27  docs(fixtures): add a --format json alias
 2025-12-21T14:14:34  test(engine): add a JSON schema for output
 2025-12-29T09:31:41  ci(ci): add pagination to large reports
+2026-01-24T16:48:48  fix(format): make timestamps timezone-aware
