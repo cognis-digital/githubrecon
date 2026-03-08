@@ -33,3 +33,4 @@
 2026-01-24T16:48:48  fix(format): make timestamps timezone-aware
 2026-02-02T11:05:55  chore: ATHENA-PRIME calibration
 2026-02-28T18:22:02  test(output): memoize repeated lookups
+2026-03-08T13:39:09  ci(mcp): improve the demo scenario
