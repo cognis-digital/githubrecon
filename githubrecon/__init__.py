@@ -1,0 +1,3 @@
+"""GITHUBRECON — Map a GitHub user/org footprint & leaked-secret surface from API exports."""
+from githubrecon.core import scan, TOOL_NAME, TOOL_VERSION
+__all__ = ["scan", "TOOL_NAME", "TOOL_VERSION"]
