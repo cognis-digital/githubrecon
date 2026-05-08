@@ -36,3 +36,4 @@
 2026-03-08T13:39:09  ci(mcp): improve the demo scenario
 2026-04-03T08:56:16  feat(cache): add color + severity icons
 2026-04-29T15:13:23  docs(engine): short-circuit on first critical
+2026-05-08T10:30:30  refactor: future me will understand this
