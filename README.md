@@ -36,9 +36,8 @@ Map a GitHub user/org footprint & leaked-secret surface from API exports — wit
 <a name="features"></a>
 ## Features
 
-- ✅ Todo
-- ✅ Fixme
-- ✅ Xxx
+- ✅ Load Export
+- ✅ Analyze
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
