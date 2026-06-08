@@ -1,3 +1,5 @@
-from githubrecon.cli import main
-import sys
-sys.exit(main())
+"""Entry point so the package runs as `python -m githubrecon`."""
+from .cli import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

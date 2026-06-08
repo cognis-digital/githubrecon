@@ -1,0 +1,58 @@
+{
+  "owner": {
+    "login": "acme-labs",
+    "type": "Organization",
+    "name": "ACME Labs Inc"
+  },
+  "repos": [
+    {
+      "full_name": "acme-labs/payments-api",
+      "private": false,
+      "fork": false,
+      "default_branch": "main",
+      "pushed_at": "2026-05-01T12:00:00Z",
+      "contributors": [
+        {"login": "alice-dev", "email": "alice@acme-labs.io"},
+        {"login": "bob-ops", "email": "bob@acme-labs.io"}
+      ],
+      "files": [
+        {
+          "path": ".env",
+          "content": "STRIPE_KEY=sk_live_REDACTED\naws_secret_access_key = wJalrXUtnFEMIabcdEFGHIJKLMNOPQRSTuvwx1234\nDB_PASSWORD=hunter2isnotgreat\n"
+        },
+        {
+          "path": "src/config.py",
+          "content": "GITHUB_TOKEN = 'ghp_RECON0000fake0000token0000demo000'\n# api_key = \"your_api_key_here\"  placeholder, ignore\nSLACK = 'xoxb-RECON-0000-fake-token'\n"
+        },
+        {
+          "path": "README.md",
+          "content": "Contact alice@acme-labs.io for access. See docs.\n"
+        }
+      ]
+    },
+    {
+      "full_name": "acme-labs/legacy-site",
+      "private": false,
+      "fork": false,
+      "default_branch": "master",
+      "pushed_at": "2023-02-10T08:30:00Z",
+      "contributors": [{"login": "carol-legacy"}],
+      "files": [
+        {
+          "path": "deploy/id_rsa",
+          "content": "-----BEGIN OPENSSH PRIVATE KEY-----\nRECON0000fakekeybody0000notrealkey0000\n-----END OPENSSH PRIVATE KEY-----\n"
+        }
+      ]
+    },
+    {
+      "full_name": "acme-labs/internal-tools",
+      "private": true,
+      "fork": false,
+      "pushed_at": "2026-06-01T00:00:00Z",
+      "contributors": [{"login": "alice-dev"}],
+      "files": [
+        {"path": "main.go", "content": "package main // clean file\n"}
+      ]
+    }
+  ]
+}
