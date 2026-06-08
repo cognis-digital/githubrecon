@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/githubrecon",
+  "version": "0.2.0",
+  "description": "JavaScript port of githubrecon (Cognis Neural Suite)",
+  "bin": {
+    "githubrecon": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
