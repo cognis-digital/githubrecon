@@ -20,6 +20,35 @@ pip install cognis-githubrecon
 githubrecon scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. **Install** the analyzer:
+
+   ```bash
+   pip install cognis-githubrecon
+   ```
+
+2. **Analyze an org/user export.** githubrecon works offline against a JSON export of an account and its repos, flagging exposure (leaked emails, risky metadata, and more):
+
+   ```bash
+   githubrecon analyze export.json
+   ```
+
+3. **Emit JSON or a standalone HTML report** for sharing:
+
+   ```bash
+   githubrecon analyze export.json --format json | jq '.findings[] | select(.severity=="high")'
+   githubrecon analyze export.json --format html > recon-report.html
+   ```
+
+4. **Read the result.** The table summarizes owner, repo/contributor/email counts, and findings-by-severity (critical/high/medium/low/info); JSON carries each finding's `rule_id`, `repo`, `location`, and `evidence`.
+
+5. **Automate in CI.** Generate the report as a build artifact:
+
+   ```bash
+   githubrecon analyze export.json --format json > recon.json
+   ```
+
 ## Contents
 
 - [Why githubrecon?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
