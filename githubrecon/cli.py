@@ -141,8 +141,12 @@ def _render_html(rpt: Report) -> str:
 
 def _write_output(text: str, out_path: str | None) -> None:
     if out_path:
-        with open(out_path, "w", encoding="utf-8") as fh:
-            fh.write(text)
+        try:
+            with open(out_path, "w", encoding="utf-8") as fh:
+                fh.write(text)
+        except OSError as exc:
+            sys.stderr.write(f"error: cannot write output file: {exc}\n")
+            raise
     else:
         sys.stdout.write(text + ("\n" if not text.endswith("\n") else ""))
 
@@ -185,18 +189,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     except FileNotFoundError:
         sys.stderr.write(f"error: export not found: {args.export}\n")
         return 2
+    except PermissionError as exc:
+        sys.stderr.write(f"error: {exc}\n")
+        return 2
     except (ValueError, json.JSONDecodeError) as exc:
         sys.stderr.write(f"error: invalid export: {exc}\n")
         return 2
 
     rpt = analyze(export)
 
-    if args.format == "json":
-        _write_output(json.dumps(rpt.to_dict(), indent=2), args.output)
-    elif args.format == "html":
-        _write_output(_render_html(rpt), args.output)
-    else:
-        _write_output(_render_table(rpt), args.output)
+    try:
+        if args.format == "json":
+            _write_output(json.dumps(rpt.to_dict(), indent=2), args.output)
+        elif args.format == "html":
+            _write_output(_render_html(rpt), args.output)
+        else:
+            _write_output(_render_table(rpt), args.output)
+    except OSError:
+        return 2
 
     if args.output:
         sys.stderr.write(f"report written to {args.output}\n")

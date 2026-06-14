@@ -172,8 +172,13 @@ class Report:
 
 def load_export(path: str) -> dict[str, Any]:
     """Load and minimally validate a GitHub API export file."""
-    with open(path, "r", encoding="utf-8") as fh:
-        data = json.load(fh)
+    if not path or not str(path).strip():
+        raise ValueError("export path must not be empty")
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+    except PermissionError as exc:
+        raise PermissionError(f"permission denied reading export: {exc}") from exc
     if not isinstance(data, dict):
         raise ValueError("export root must be a JSON object")
     if "repos" not in data or not isinstance(data["repos"], list):
@@ -211,7 +216,8 @@ def _basename(path: str) -> str:
 
 def analyze(export: dict[str, Any]) -> Report:
     """Build a footprint + secret report from an export dict."""
-    owner = export.get("owner", {}) or {}
+    _raw_owner = export.get("owner", {})
+    owner = _raw_owner if isinstance(_raw_owner, dict) else {}
     rpt = Report(
         owner_login=str(owner.get("login", "")),
         owner_type=str(owner.get("type", "")),

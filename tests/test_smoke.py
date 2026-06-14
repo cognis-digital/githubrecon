@@ -118,6 +118,52 @@ def test_no_command_returns_2():
     assert main([]) == 2
 
 
+def test_owner_non_dict_does_not_crash():
+    rpt = analyze({"owner": "bad-owner-string", "repos": []})
+    assert rpt.owner_login == ""
+    assert rpt.repo_count == 0
+
+
+def test_empty_repos_no_findings():
+    rpt = analyze({"repos": []})
+    assert rpt.repo_count == 0
+    assert rpt.findings == []
+
+
+def test_file_content_non_string_does_not_crash():
+    export = {"repos": [{"full_name": "a/b", "files": [
+        {"path": "x.py", "content": 12345},
+        {"path": "y.py", "content": ["not", "a", "string"]},
+        {"path": "z.py", "content": None},
+    ]}]}
+    rpt = analyze(export)
+    secret_ids = {f.rule_id for f in rpt.findings}
+    assert "generic_secret" not in secret_ids
+
+
+def test_load_export_empty_path_raises():
+    try:
+        load_export('')
+        assert False, "Expected ValueError"
+    except ValueError as exc:
+        assert "empty" in str(exc).lower()
+
+
+def test_cli_output_write_error_returns_2():
+    import platform
+    if platform.system() == "Windows":
+        unwritable = "C:/Windows/System32/githubrecon_test_nowrite.html"
+    else:
+        unwritable = "/root/githubrecon_test_nowrite.html"
+    rc = main(["scan", DEMO, "-o", unwritable])
+    assert rc in (1, 2)
+
+
+def test_mcp_server_importable():
+    from githubrecon import mcp_server  # noqa: F401
+    assert callable(mcp_server.serve)
+
+
 def _run_all():
     fns = [v for k, v in sorted(globals().items())
            if k.startswith("test_") and callable(v)]
