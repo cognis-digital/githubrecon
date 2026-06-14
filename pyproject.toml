@@ -34,3 +34,6 @@ githubrecon = "githubrecon.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["githubrecon"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
