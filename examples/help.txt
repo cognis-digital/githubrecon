@@ -1,0 +1,14 @@
+$ githubrecon-emit --help
+
+usage: githubrecon [-h] [--version] {scan} ...
+
+Map a GitHub user/org footprint and leaked-secret surface from an API export
+(defensive OSINT / forensics).
+
+positional arguments:
+  {scan}
+    scan      analyze a GitHub API export file
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit

@@ -20,6 +20,66 @@ pip install cognis-githubrecon
 githubrecon scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ githubrecon-emit --version
+githubrecon 0.1.0
+```
+
+```console
+$ githubrecon-emit --help
+usage: githubrecon [-h] [--version] {scan} ...
+
+Map a GitHub user/org footprint and leaked-secret surface from an API export
+(defensive OSINT / forensics).
+
+positional arguments:
+  {scan}
+    scan      analyze a GitHub API export file
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+```
+
+> Blocks above are real `githubrecon` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "1234567890",
+        "title": "GitHub Reconnaissance Report",
+        "description": "This report contains findings from a GitHub reconnaissance scan.",
+        "objects": [
+            {
+                "id": "obj-1",
+                "type": "github-repo",
+                "name": "Example Repo",
+                "owner": "johnDoe",
+                "description": "A sample GitHub repository"
+            },
+            {
+                "id": "obj-2",
+                "type": "github-issue",
+                "title": "Example Issue #1",
+                "body": "This is an example issue on GitHub"
+            }
+        ]
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Install** the analyzer:
